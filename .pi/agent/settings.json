@@ -1,0 +1,33 @@
+{
+    "lastChangelogVersion"  : "0.66.1",
+    "transport"             : "websocket",
+    "autocompleteMaxVisible": 20,
+    "enabledModels"         : [
+        "opencode/glm-5",
+        "opencode/nemotron-3-super-free",
+        "opencode/minimax-m2.5",
+        "opencode/kimi-k2.5",
+        "opencode-go/minimax-m2.7",
+        "fireworks/accounts/fireworks/routers/kimi-k2p5-turbo",
+        "github-copilot/gpt-5.4",
+        "github-copilot/gpt-5.3-codex"
+    ],
+    "defaultProvider"       : "github-copilot",
+    "defaultModel"          : "gpt-5.3-codex",
+    "packages"              : [
+        "-npm:pi-mcp-adapter",
+        "git:github.com/HazAT/pi-interactive-subagents",
+        "npm:pi-hashline-readmap",
+        "npm:@robhowley/py-pit-skills",
+        "npm:pi-verbosity-control",
+        "npm:@ifi/pi-spec",
+        "git:github.com/jonjonrankin/pi-caveman",
+        "-npm:pi-memory"
+    ],
+    "hideThinkingBlock"     : false,
+    "quietStartup"          : true,
+    "steeringMode"          : "all",
+    "followUpMode"          : "all",
+    "showHardwareCursor"    : true,
+    "defaultThinkingLevel"  : "medium"
+}
