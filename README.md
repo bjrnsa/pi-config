@@ -17,11 +17,19 @@ This repo uses a symlink bootstrap script instead.
 ### Sync these (high value)
 - `~/.agents/skills` (your custom skills)
 - `~/.pi/agent/AGENTS.md`
-- `~/.pi/agent/agents`
+- `~/.pi/agent/agents` (from repo `agents/`)
 - `~/.pi/agent/extensions`
 - `~/.pi/agent/settings.json`
 - `~/.pi/agent/models.json`
 > Note: `~/.pi/agent/verbosity.json` is no longer used in this setup.
+
+Agent definitions are stored in this repo under `agents/` so they can be regular files (not symlinks), then linked into `~/.pi/agent/agents` by the bootstrap script.
+
+To refresh `agents/` from your local sources:
+
+```bash
+bash scripts/copy-agent-docs.sh
+```
 ### Usually do **not** sync
 
 - Session history, logs, caches, temp files

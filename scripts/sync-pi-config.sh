@@ -63,7 +63,7 @@ BACKUP_DIR="$HOME/.pi-config-backups/$(date +%Y%m%d-%H%M%S)"
 TARGETS=(
   "skills|$HOME/.agents/skills"
   ".pi/agent/AGENTS.md|$HOME/.pi/agent/AGENTS.md"
-  ".pi/agent/agents|$HOME/.pi/agent/agents"
+  "agents|$HOME/.pi/agent/agents"
   ".pi/agent/extensions|$HOME/.pi/agent/extensions"
   ".pi/agent/settings.json|$HOME/.pi/agent/settings.json"
   ".pi/agent/models.json|$HOME/.pi/agent/models.json"
