@@ -22,7 +22,8 @@
         "npm:pi-verbosity-control",
         "npm:@ifi/pi-spec",
         "git:github.com/jonjonrankin/pi-caveman",
-        "-npm:pi-memory"
+        "-npm:pi-memory",
+        "npm:@bjrnsa/chrome-cdp-pi-extension"
     ],
     "hideThinkingBlock"     : false,
     "quietStartup"          : true,

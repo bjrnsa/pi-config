@@ -15,15 +15,13 @@ This repo uses a symlink bootstrap script instead.
 ## What is worth syncing
 
 ### Sync these (high value)
-
 - `~/.agents/skills` (your custom skills)
 - `~/.pi/agent/AGENTS.md`
 - `~/.pi/agent/agents`
 - `~/.pi/agent/extensions`
 - `~/.pi/agent/settings.json`
 - `~/.pi/agent/models.json`
-- `~/.pi/agent/verbosity.json`
-
+> Note: `~/.pi/agent/verbosity.json` is no longer used in this setup.
 ### Usually do **not** sync
 
 - Session history, logs, caches, temp files

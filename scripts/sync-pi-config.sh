@@ -67,7 +67,6 @@ TARGETS=(
   ".pi/agent/extensions|$HOME/.pi/agent/extensions"
   ".pi/agent/settings.json|$HOME/.pi/agent/settings.json"
   ".pi/agent/models.json|$HOME/.pi/agent/models.json"
-  ".pi/agent/verbosity.json|$HOME/.pi/agent/verbosity.json"
   ".pi/agent/git/.gitignore|$HOME/.pi/agent/git/.gitignore"
 )
 
