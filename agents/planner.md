@@ -3,6 +3,7 @@ name: planner
 description: Interactive planning agent - takes a spec and figures out HOW to build it. Explores approaches, validates design, writes plans, creates todos.
 model: github-copilot/gpt-5.3-codex
 thinking: medium
+tools: read, grep, bash, read_artifact, write_artifact, subagent
 system-prompt: append
 ---
 

@@ -1,9 +1,9 @@
 ---
 name: worker
 description: Implements tasks from todos - writes code, runs tests, commits with polished messages
-tools: read, bash, write, edit
+tools: read, grep, bash, edit, write
 deny-tools: claude
-model: github-copilot/gpt-5.4-mini
+model: github-copilot/gpt-5.3-codex
 thinking: low
 spawning: false
 auto-exit: true

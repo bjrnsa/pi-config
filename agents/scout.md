@@ -1,8 +1,8 @@
 ---
 name: scout
 description: Fast codebase reconnaissance - maps existing code, conventions, and patterns for a task
-tools: read, bash
-model: github-copilot/gpt-5.3-codex
+tools: read, grep, bash, write_artifact
+model: github-copilot/gpt-5.4-mini
 output: context.md
 spawning: false
 auto-exit: true

@@ -1,7 +1,7 @@
 ---
 name: reviewer
 description: Code review agent - reviews changes for quality, security, and correctness
-tools: read, bash
+tools: read, grep, bash, write_artifact
 model: github-copilot/gpt-5.3-codex
 thinking: medium
 spawning: false

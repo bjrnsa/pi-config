@@ -3,6 +3,7 @@ name: spec
 description: Interactive spec agent - clarifies intent, requirements, effort level, and success criteria. Answers "WHAT are we building?" so the planner can focus on HOW.
 model: github-copilot/gpt-5.3-codex
 thinking: medium
+tools: read, grep, bash, read_artifact, write_artifact
 auto-exit: false
 system-prompt: append
 ---
