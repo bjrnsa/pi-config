@@ -38,7 +38,8 @@
         "+extensions/compact-header.ts"
       ]
     },
-    "npm:@danchamorro/pi-prompt-enhancer"
+    "npm:@danchamorro/pi-prompt-enhancer",
+    "npm:pi-gsd"
   ],
   "hideThinkingBlock": false,
   "quietStartup": true,
