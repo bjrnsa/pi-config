@@ -1,0 +1,38 @@
+[environment]
+python-version = "3.14"
+
+[terminal]
+output-format = "concise"
+
+[src]
+include = ["src", "tests"]
+
+[rules]
+ambiguous-protocol-member = "ignore"
+conflicting-declarations = "ignore"
+cyclic-class-definition = "ignore"
+cyclic-type-alias-definition = "ignore"
+dataclass-field-order = "ignore"
+deprecated = "ignore"
+duplicate-base = "ignore"
+duplicate-kw-only = "ignore"
+empty-body = "ignore"
+ignore-comment-unknown-rule = "ignore"
+implicit-concatenated-string-type-annotation = "ignore"
+raw-string-type-annotation = "ignore"
+ineffective-final = "ignore"
+invalid-attribute-access = "ignore"
+invalid-type-checking-constant = "ignore"
+invalid-explicit-override = "ignore"
+mismatched-type-name = "ignore"
+redundant-cast = "ignore"
+redundant-final-classvar = "ignore"
+shadowed-type-variable = "ignore"
+static-assert-error = "ignore"
+type-assertion-failure = "ignore"
+unused-ignore-comment = "ignore"
+useless-overload-body = "ignore"
+possibly-missing-attribute = "ignore"
+possibly-missing-import = "ignore"
+possibly-missing-submodule = "ignore"
+possibly-unresolved-reference = "ignore"

@@ -1,0 +1,76 @@
+fix = true
+line-length = 88
+indent-width = 4
+exclude = [".git", ".pytest_cache", ".ruff_cache", ".venv"]
+output-format = "concise"
+target-version = "py314"
+
+
+[format]
+docstring-code-format = true
+docstring-code-line-length = "dynamic"
+
+[lint]
+select = [
+    "D",
+    "E",
+    "F",
+    "UP",
+    "B",
+    "SIM",
+    "I",
+    "RET",
+    "PERF",
+    "RUF",
+    "PLE",
+    "PLW",
+    "NPY",
+    "PD",
+    "PTH",
+    "C4",
+    "PLC",
+    "ASYNC",
+    "ANN",
+    "A",
+    "ARG",
+    "PIE",
+    "FA",
+    "ISC",
+    "ICN",
+    "TD",
+    "TID",
+    "N",
+    "TC",
+    "S",
+    "FA100",
+]
+# FA100 bans from __future__ import annotations (Python 3.14+ uses PEP 649)
+# This is enforced via custom rule below
+
+
+[lint.pydocstyle]
+convention = "pep257"
+
+[lint.mccabe]
+max-complexity = 10
+
+[lint.pylint]
+max-branches = 10
+max-statements = 50
+max-args = 5
+
+[lint.per-file-ignores]
+"**/tests/**" = [
+    "D",
+    "E501",
+    "ARG002",
+    "S101",
+    "S105",
+    "S106",
+    "TC003",
+    "PERF401",
+    "SIM102",
+    "ANN401",
+]
+"**/migrations/**" = ["D", "E501"]
+"scraper/src/scraper/browser/sessions.py" = ["TC003"]
