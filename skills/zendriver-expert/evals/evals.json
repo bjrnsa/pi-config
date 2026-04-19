@@ -1,0 +1,41 @@
+{
+  "skill_name": "zendriver-expert",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I need to fix a zendriver bug where `expect_response()` never returns a body for a JSON endpoint after reload. Explain where to look in this repo, what parts of the architecture are involved, and what tests you would add before changing code.",
+      "expected_output": "A repo-specific explanation that distinguishes passive network expectations from Fetch interception, points to `expect.py`, `tab.py`, and relevant tests, and proposes test-first debugging.",
+      "files": [],
+      "expectations": [
+        "Explains that `Tab.expect_response()` in `zendriver/core/tab.py` returns a `ResponseExpectation` from `zendriver/core/expect.py`.",
+        "Distinguishes passive `expect_response()` / `expect_request()` network observation from blocking Fetch interception in `zendriver/core/intercept.py`.",
+        "Notes that `response_body` waits for `cdp.network.LoadingFinished` before calling `cdp.network.get_response_body(...)`.",
+        "Proposes a reproduction-first test around reload and response body retrieval using `uv run pytest`."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "How does zendriver differ from Selenium and Playwright for scraping modern JS-heavy sites with anti-bot checks? I want concrete strengths, limitations, and which files in this repo implement the behavior you're talking about.",
+      "expected_output": "A balanced explanation grounded in Zendriver's CDP-first architecture, stealth-related behavior, async transport, and repository file map, without overclaiming stealth.",
+      "files": [],
+      "expectations": [
+        "States that Zendriver is Chromium/CDP-first rather than WebDriver-based.",
+        "References generated `zendriver/cdp` and/or raw `tab.send(cdp...)` as part of customization story.",
+        "Explains stealth as partial and references concrete implementation such as headless UA patching and/or expert mode behavior.",
+        "Explains at least one clear limitation relative to Playwright or Selenium, such as Chromium-only scope or weaker locator/actionability ergonomics."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Please add a new helper for a Zendriver `Tab` that waits for a request, then captures its response body, for a React app running in iframes. Walk me through where such behavior belongs and what existing APIs or gotchas I need to respect.",
+      "expected_output": "A design answer that places behavior in the right layer, references existing `expect_*` helpers, iframe-aware querying constraints, async timing behavior, and warns about regex matching and active-vs-passive network features.",
+      "files": [],
+      "expectations": [
+        "Places convenience API in `zendriver/core/tab.py` while keeping expectation plumbing in `zendriver/core/expect.py` or existing response expectation objects.",
+        "Says to prefer passive request/response expectations over `intercept()` unless caller must block or mutate traffic.",
+        "Mentions iframe-related DOM gotchas and existing iframe-aware querying behavior separately from network waiting.",
+        "Mentions at least one timing or matching caveat such as regex full-match behavior, `await tab`, or ready-state timing."
+      ]
+    }
+  ]
+}

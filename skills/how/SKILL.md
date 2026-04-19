@@ -45,7 +45,7 @@ The right decomposition depends on the question — use your judgment. For narro
 Spawn all explorers in a single message:
 
 - `subagent_type`: `generalPurpose`
-- `model`: `gpt-5.4`
+- `model`: `github-copilot/gpt-5.4`
 - `readonly`: `true`
 
 Each explorer gets the same base prompt from `references/explorer-prompt.md`, plus a specific exploration angle telling it which slice to focus on. Each explorer should:
@@ -64,7 +64,7 @@ Then proceed to Step 3.
 Spawn a single Task subagent that explores and explains in one pass:
 
 - `subagent_type`: `generalPurpose`
-- `model`: `claude-opus-4.6`
+- `model`: `github-copilot/gpt-5.3-codex`
 - `readonly`: `true`
 
 This agent does its own exploration (Glob, Grep, Read) and writes the explanation directly. Read `references/explainer-prompt.md` for the communication style and output format — the agent follows the same structure, it just doesn't have explorer findings as input.
@@ -76,7 +76,7 @@ Proceed to Step 4.
 Once all explorers have returned, spawn a single Task subagent to synthesize their findings into one coherent explanation:
 
 - `subagent_type`: `generalPurpose`
-- `model`: `claude-opus-4.6`
+- `model`: `github-copilot/gpt-5.3-codex`
 - `readonly`: `true`
 
 The explainer gets all explorers' findings and writes the human-facing explanation (see output format below). Read `references/explainer-prompt.md` for the full prompt template. The explainer reconciles overlapping findings, resolves contradictions, and weaves the separate slices into a unified picture.
@@ -113,9 +113,9 @@ After the explanation is complete, spawn architectural critics. Launch all in a 
 
 | Subagent | Model |
 |----------|-------|
-| Critic A | `claude-opus-4.6` |
-| Critic B | `composer-2` |
-| Critic C | `gpt-5.4` |
+| Critic A | `github-copilot/gpt-5.3-codex` |
+| Critic B | `github-copilot/gpt-5.3-codex` |
+| Critic C | `github-copilot/gpt-5.4` |
 
 For each critic:
 - `subagent_type`: `generalPurpose`

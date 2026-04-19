@@ -1,50 +1,45 @@
 {
-  "lastChangelogVersion": "0.66.1",
-  "transport": "websocket",
-  "autocompleteMaxVisible": 20,
-  "enabledModels": [
-    "opencode/glm-5",
-    "opencode/nemotron-3-super-free",
-    "opencode/minimax-m2.5",
-    "opencode/kimi-k2.5",
-    "opencode-go/minimax-m2.7",
-    "fireworks/accounts/fireworks/routers/kimi-k2p5-turbo",
-    "github-copilot/gpt-5.4",
-    "github-copilot/gpt-5.3-codex"
-  ],
-  "defaultProvider": "github-copilot",
-  "defaultModel": "gpt-5.3-codex",
-  "packages": [
-    "-npm:pi-mcp-adapter",
-    "git:github.com/HazAT/pi-interactive-subagents",
-    "npm:pi-hashline-readmap",
-    "npm:@robhowley/py-pit-skills",
-    {
-      "source": "npm:pi-verbosity-control",
-      "extensions": [
-        "-index.ts"
-      ]
-    },
-    "npm:@ifi/pi-spec",
-    "git:github.com/jonjonrankin/pi-caveman",
-    "-npm:pi-memory",
-    "npm:@bjrnsa/chrome-cdp-pi-extension",
-    "npm:pi-turtle-rlm",
-    {
-      "source": "npm:@ifi/oh-pi-extensions",
-      "extensions": [
-        "-extensions/scheduler.ts",
-        "-extensions/auto-session-name.ts",
-        "+extensions/compact-header.ts"
-      ]
-    },
-    "npm:@danchamorro/pi-prompt-enhancer",
-    "npm:pi-gsd"
-  ],
-  "hideThinkingBlock": false,
-  "quietStartup": true,
-  "steeringMode": "all",
-  "followUpMode": "all",
-  "showHardwareCursor": true,
-  "defaultThinkingLevel": "medium"
+    "lastChangelogVersion"  : "0.67.68",
+    "transport"             : "websocket",
+    "hideThinkingBlock"     : true,
+    "quietStartup"          : true,
+    "steeringMode"          : "all",
+    "followUpMode"          : "all",
+    "showHardwareCursor"    : true,
+    "defaultThinkingLevel"  : "medium",
+    "autocompleteMaxVisible": 20,
+    "defaultProvider"       : "fireworks",
+    "defaultModel"          : "accounts/fireworks/routers/kimi-k2p5-turbo",
+    "enabledModels"         : [
+        "opencode/glm-5",
+        "opencode/kimi-k2.5",
+        "opencode-go/minimax-m2.7",
+        "fireworks/accounts/fireworks/routers/kimi-k2p5-turbo",
+        "github-copilot/gpt-5.4",
+        "github-copilot/gpt-5.3-codex",
+        "opencode/glm-5.1",
+        "github-copilot/gpt-5.4-mini"
+    ],
+    "packages"              : [
+        { "source": "npm:pi-mcp-adapter", "extensions": ["index.ts"] },
+        {
+            "source"    : "-git:github.com/HazAT/pi-interactive-subagents",
+            "extensions": ["-pi-extension/subagents/index.ts"]
+        },
+        "npm:@robhowley/py-pit-skills",
+        "git:github.com/jonjonrankin/pi-caveman",
+        "npm:pi-turtle-rlm",
+        "npm:@danchamorro/pi-prompt-enhancer",
+        {
+            "source"    : "npm:@ifi/oh-pi-extensions",
+            "extensions": [
+                "+extensions/compact-header.ts",
+                "-extensions/watchdog.ts",
+                "+extensions/auto-session-name.ts",
+                "+extensions/usage-tracker.ts",
+                "-extensions/scheduler.ts"
+            ]
+        },
+        "npm:pi-subagents"
+    ]
 }

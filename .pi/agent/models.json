@@ -1,16 +1,16 @@
 {
     "providers": {
         "fireworks": {
-            "baseUrl": "https://api.fireworks.ai/inference",
+            "baseUrl": "https://api.fireworks.ai/inference/v1",
             "apiKey" : "FIREWORKS_API_KEY",
-            "api"    : "anthropic-messages",
+            "api"    : "openai-completions",
             "models" : [
                 {
                     "id"           : "accounts/fireworks/routers/kimi-k2p5-turbo",
                     "name"         : "Kimi K2.5 (Fireworks)",
                     "reasoning"    : true,
                     "input"        : ["text", "image"],
-                    "cost"         : {"input": 0.6, "output": 3, "cacheRead": 0.1, "cacheWrite": 0},
+                    "cost"         : {"input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0},
                     "contextWindow": 262144,
                     "maxTokens"    : 262144,
                     "compat"       : {}
