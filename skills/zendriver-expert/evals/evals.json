@@ -36,6 +36,54 @@
         "Mentions iframe-related DOM gotchas and existing iframe-aware querying behavior separately from network waiting.",
         "Mentions at least one timing or matching caveat such as regex full-match behavior, `await tab`, or ready-state timing."
       ]
+    },
+    {
+      "id": 4,
+      "prompt": "My zendriver script on Windows hangs during `browser.start()`. I suspect it's an asyncio issue. What should I check and how do I write a test for this in the repo?",
+      "expected_output": "Points to Windows event loop policy requirement, shows how tests handle it in conftest.py, and suggests the correct test pattern.",
+      "files": [],
+      "expectations": [
+        "Mentions `asyncio.WindowsSelectorEventLoopPolicy()` requirement on Windows.",
+        "References `tests/conftest.py` where this is set automatically for tests.",
+        "Mentions `CreateBrowser` context manager or `zd.start()` with proper config.",
+        "Suggests `uv run pytest` for running tests."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "I need to send Ctrl+A and then type 'hello' into a form using zendriver. How do I construct the key sequence correctly?",
+      "expected_output": "Explains the KeyEvents system, from_mixed_input, modifiers, and how Element.send_keys() routes through it.",
+      "files": [],
+      "expectations": [
+        "References `zendriver/core/keys.py` and `KeyEvents.from_mixed_input()`.",
+        "Explains `KeyModifiers.Ctrl` and bitwise-OR combinations.",
+        "Shows that `Element.send_keys()` uses `KeyEvents.from_text()` by default and may not handle modifiers.",
+        "Mentions `SpecialKeys` for arrows/enter/etc."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "I want to fix a type error in `zendriver/cdp/network.py` by changing a field type. Is this the right approach?",
+      "expected_output": "Explains that cdp/ is auto-generated and should not be hand-edited. Suggests the correct alternative approach.",
+      "files": [],
+      "expectations": [
+        "Explicitly warns against hand-editing `zendriver/cdp/` files.",
+        "Explains the generated nature of the CDP package.",
+        "Suggests adding behavior in `zendriver/core/` instead.",
+        "Mentions `scripts/generate_cdp.py` or equivalent regeneration."
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "My `element.clear_input()` doesn't trigger React onChange. What's happening and what's the zendriver-native way to handle this?",
+      "expected_output": "Explains React _valueTracker mechanism, how zendriver's clear_input bypasses it via native prototype setter, and why direct value assignment fails.",
+      "files": [],
+      "expectations": [
+        "Mentions React `_valueTracker` as the root cause.",
+        "Explains that `clear_input()` uses `Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(...)` to bypass the tracker.",
+        "References `zendriver/core/element.py` for implementation.",
+        "Mentions `clear_input_by_deleting()` as alternative for custom input handlers."
+      ]
     }
   ]
 }

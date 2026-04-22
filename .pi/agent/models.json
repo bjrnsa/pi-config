@@ -12,7 +12,17 @@
                     "input"        : ["text", "image"],
                     "cost"         : {"input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0},
                     "contextWindow": 262144,
-                    "maxTokens"    : 262144,
+                    "maxTokens"    : 32768,
+                    "compat"       : {}
+                },
+                {
+                    "id"           : "accounts/fireworks/routers/kimi-k2p6",
+                    "name"         : "Kimi K2.6 (Fireworks)",
+                    "reasoning"    : true,
+                    "input"        : ["text", "image"],
+                    "cost"         : {"input": 0.95, "output": 4, "cacheRead": 0.16, "cacheWrite": 0},
+                    "contextWindow": 262144,
+                    "maxTokens"    : 32768,
                     "compat"       : {}
                 }
             ]
