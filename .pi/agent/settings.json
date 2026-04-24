@@ -1,29 +1,30 @@
 {
-  "lastChangelogVersion": "0.70.2",
-  "transport": "websocket",
-  "hideThinkingBlock": true,
-  "quietStartup": true,
-  "steeringMode": "all",
-  "followUpMode": "all",
-  "showHardwareCursor": true,
-  "defaultThinkingLevel": "medium",
-  "autocompleteMaxVisible": 20,
-  "defaultProvider": "fireworks",
-  "defaultModel": "accounts/fireworks/routers/kimi-k2p6",
-  "enabledModels": [
-    "opencode-go/minimax-m2.7",
-    "fireworks/accounts/fireworks/routers/kimi-k2p5-turbo",
-    "github-copilot/gpt-5.3-codex",
-    "opencode/glm-5.1",
-    "github-copilot/gpt-5.4-mini",
-    "fireworks/accounts/fireworks/routers/kimi-k2p6",
-    "openai-codex/gpt-5.5"
-  ],
-  "packages": [
-    "npm:@robhowley/py-pit-skills",
-    "git:github.com/jonjonrankin/pi-caveman",
-    "npm:pi-turtle-rlm",
-    "npm:@danchamorro/pi-prompt-enhancer",
-    "npm:@ifi/pi-spec"
-  ]
+    "lastChangelogVersion"  : "0.70.2",
+    "transport"             : "websocket",
+    "hideThinkingBlock"     : true,
+    "quietStartup"          : true,
+    "steeringMode"          : "all",
+    "followUpMode"          : "all",
+    "showHardwareCursor"    : true,
+    "defaultThinkingLevel"  : "low",
+    "autocompleteMaxVisible": 20,
+    "defaultProvider"       : "openai-codex",
+    "defaultModel"          : "gpt-5.5",
+    "enabledModels"         : [
+        "opencode-go/minimax-m2.7",
+        "fireworks/accounts/fireworks/routers/kimi-k2p5-turbo",
+        "github-copilot/gpt-5.3-codex",
+        "opencode/glm-5.1",
+        "github-copilot/gpt-5.4-mini",
+        "fireworks/accounts/fireworks/routers/kimi-k2p6",
+        "openai-codex/gpt-5.5"
+    ],
+    "packages"              : [
+        "npm:@robhowley/py-pit-skills",
+        "git:github.com/jonjonrankin/pi-caveman",
+        "npm:pi-turtle-rlm",
+        "npm:@danchamorro/pi-prompt-enhancer",
+        "npm:@ifi/pi-spec",
+        "npm:pi-verbosity-control"
+    ]
 }
