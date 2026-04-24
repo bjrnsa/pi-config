@@ -1,10 +1,10 @@
 ---
 name: dspy-rlm-module
 description: Use dspy.RLM (Recursive Language Model) for reasoning over contexts too large to fit in an LLM's working window — entire codebases, long logs, massive documents, or multi-step data exploration that needs a sandboxed Python REPL. Use when the input is >100k tokens, needs recursive chunking, or benefits from the LLM writing and running code to probe data.
-when_to_use: User has a very long document/codebase/log, asks about "long context", mentions RLM or recursive reasoning, or is trying to stuff a huge context into a single predictor and hitting token limits.
 ---
 
 # `dspy.RLM` — Recursive Language Model
+when_to_use: User has a very long document/codebase/log, asks about "long context", mentions RLM or recursive reasoning, or is trying to stuff a huge context into a single predictor and hitting token limits.
 
 `dspy.RLM` runs the LLM in a sandboxed Python REPL (Pyodide/WASM via Deno) with access to the full context as variables. The LLM writes code to slice, grep, summarize, and recursively sub-query the data, iterating until it can answer. Use it when the context is too large to cram into a single prompt.
 

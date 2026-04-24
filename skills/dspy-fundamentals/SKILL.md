@@ -1,10 +1,10 @@
 ---
 name: dspy-fundamentals
 description: Write idiomatic DSPy 3.2.x programs — typed Signatures, dspy.Module subclasses, Predict/ChainOfThought/ReAct/ProgramOfThought, and save/load. Use this when starting any new DSPy project or when fixing non-idiomatic DSPy code (hard-coded prompts, ad-hoc string templates, untyped outputs, non-serializable classes).
-when_to_use: User mentions DSPy, writes a file that imports `dspy`, asks to build an LLM pipeline/program/agent with structured inputs/outputs, or requests refactoring of prompt-engineering code into a programmatic framework.
 ---
 
 # DSPy Fundamentals (3.2.x)
+when_to_use: User mentions DSPy, writes a file that imports `dspy`, asks to build an LLM pipeline/program/agent with structured inputs/outputs, or requests refactoring of prompt-engineering code into a programmatic framework.
 
 DSPy is the "PyTorch for prompts" — you declare **Signatures** (typed I/O contracts), compose them into **Modules**, and let optimizers (not you) tune the instructions and few-shot examples. Never write raw prompts.
 
