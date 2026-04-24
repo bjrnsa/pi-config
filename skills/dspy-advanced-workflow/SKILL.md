@@ -1,10 +1,10 @@
 ---
 name: dspy-advanced-workflow
-description: Drive a complete DSPy 3.1.x project end-to-end — spec → program → metric → baseline → GEPA optimize → export → deploy. Orchestrates the other four DSPy skills (dspy-fundamentals, dspy-evaluation-harness, dspy-gepa-optimizer, dspy-rlm-module) in the correct order. Use this for any non-trivial DSPy build from scratch.
+description: Drive a complete DSPy 3.2.x project end-to-end — spec → program → metric → baseline → GEPA optimize → export → deploy. Orchestrates the other four DSPy skills (dspy-fundamentals, dspy-evaluation-harness, dspy-gepa-optimizer, dspy-rlm-module) in the correct order. Use this for any non-trivial DSPy build from scratch.
+when_to_use: User wants to build, optimize, and ship a new DSPy pipeline; says "full workflow" / "end to end" / "from scratch"; or needs the standard loop applied to a greenfield task.
 ---
 
 # DSPy Advanced Workflow (2026)
-when_to_use: User wants to build, optimize, and ship a new DSPy pipeline; says "full workflow" / "end to end" / "from scratch"; or needs the standard loop applied to a greenfield task.
 
 This skill runs the seven-step loop that turns a natural-language task description into an optimized, saved, deployable DSPy program. Every step delegates to a specific skill — invoke them in order.
 
@@ -64,6 +64,8 @@ print("Optimized:", evaluator(optimized).score)
 ```
 
 Run `auto="light"` first as a sanity check; move to `auto="medium"`/`"heavy"` for the final run. See `dspy-gepa-optimizer`.
+
+If you need a deliberate multi-stage compile loop, DSPy 3.2.x also exposes `dspy.BetterTogether(metric=..., bootstrap=..., gepa=...)` for chaining named optimizers after you have a clean baseline GEPA setup.
 
 ### 7. Export & deploy
 

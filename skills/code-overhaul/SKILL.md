@@ -1,5 +1,5 @@
 ---
-name: code-overhaul
+name: code-overhaul-review
 version: 1.0.0
 description: |
   Audit a codebase for maintenance and modernization. Challenges scope,
