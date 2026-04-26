@@ -1,6 +1,3 @@
-[environment]
-python-version = "3.14"
-
 [terminal]
 output-format = "concise"
 
@@ -9,18 +6,16 @@ include = ["src", "tests"]
 
 [rules]
 ambiguous-protocol-member = "ignore"
-conflicting-declarations = "ignore"
+call-top-callable = "ignore"
 cyclic-class-definition = "ignore"
 cyclic-type-alias-definition = "ignore"
-dataclass-field-order = "ignore"
 deprecated = "ignore"
-duplicate-base = "ignore"
-duplicate-kw-only = "ignore"
 empty-body = "ignore"
 ignore-comment-unknown-rule = "ignore"
 implicit-concatenated-string-type-annotation = "ignore"
 raw-string-type-annotation = "ignore"
 ineffective-final = "ignore"
+index-out-of-bounds = "ignore"
 invalid-attribute-access = "ignore"
 invalid-type-checking-constant = "ignore"
 invalid-explicit-override = "ignore"

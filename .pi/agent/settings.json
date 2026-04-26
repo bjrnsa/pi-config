@@ -6,15 +6,14 @@
   "steeringMode": "all",
   "followUpMode": "all",
   "showHardwareCursor": true,
-  "defaultThinkingLevel": "off",
+  "defaultThinkingLevel": "medium",
   "autocompleteMaxVisible": 20,
-  "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.5",
+  "defaultProvider": "fireworks",
+  "defaultModel": "accounts/fireworks/routers/kimi-k2p6",
   "enabledModels": [
     "opencode/glm-5.1",
     "openai-codex/gpt-5.5",
     "fireworks/accounts/fireworks/routers/kimi-k2p5-turbo",
-    "fireworks/accounts/fireworks/models/kimi-k2p6",
     "deepseek/deepseek-v4-pro",
     "fireworks/accounts/fireworks/routers/kimi-k2p6"
   ],
