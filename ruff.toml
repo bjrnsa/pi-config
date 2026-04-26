@@ -10,6 +10,7 @@ docstring-code-format = true
 docstring-code-line-length = "dynamic"
 
 [lint]
+preview = true
 select = [
     "D",
     "E",
@@ -25,7 +26,7 @@ select = [
     "RUF006",
     "RUF008",
     "RUF009",
-    "RUF011",
+    "B035",
     "RUF013",
     "RUF015",
     "RUF017",
