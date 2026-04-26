@@ -6,7 +6,7 @@
   "steeringMode": "all",
   "followUpMode": "all",
   "showHardwareCursor": true,
-  "defaultThinkingLevel": "medium",
+  "defaultThinkingLevel": "high",
   "autocompleteMaxVisible": 20,
   "defaultProvider": "fireworks",
   "defaultModel": "accounts/fireworks/routers/kimi-k2p6",

@@ -30,6 +30,10 @@ Run after implementation finishes:
 - If writing tests, use `pytest` via `uv run pytest`.
 - Keep tests aligned with current file locations and actual exported contracts; do not preserve stale paths or stale assumptions just to satisfy old tests.
 
+### Model Selection
+- When calling `subagent` or `handoff` tools, do NOT specify a `model` or `mode` parameter unless the user explicitly names one.
+- Never select or default to Anthropic (`anthropic/*`) models. Use the current session model or modes from `modes.json` instead.
+
 ### Coding Style
 - **NO emojis in code** - Use plain text status indicators only
 - **NO excessive print statements** - Use proper logging (logging module) or return values; print only when explicitly requested
