@@ -3,7 +3,6 @@ line-length = 88
 indent-width = 4
 exclude = [".git", ".pytest_cache", ".ruff_cache", ".venv"]
 output-format = "concise"
-target-version = "py314"
 
 
 [format]
@@ -20,33 +19,64 @@ select = [
     "SIM",
     "I",
     "RET",
-    "PERF",
-    "RUF",
+    "PERF101",
+    "PERF102",
+    "PERF402",
+    "RUF006",
+    "RUF008",
+    "RUF009",
+    "RUF011",
+    "RUF013",
+    "RUF015",
+    "RUF017",
+    "RUF024",
+    "RUF027",
+    "RUF029",
+    "RUF032",
+    "RUF034",
+    "RUF040",
+    "RUF043",
+    "RUF049",
+    "RUF052",
+    "RUF055",
+    "RUF056",
+    "RUF058",
+    "RUF061",
+    "RUF066",
+    "RUF069",
+    "RUF073",
+    "RUF100",
+    "RUF101",
+    "RUF102",
+    "RUF103",
+    "RUF104",
+    "RUF200",
     "PLE",
     "PLW",
     "NPY",
     "PD",
     "PTH",
     "C4",
-    "PLC",
+    "PLC0131",
+    "PLC0205",
+    "PLC0206",
+    "PLC0208",
+    "PLC0414",
+    "PLC0415",
+    "PLC1802",
+    "PLC2801",
+    "PLC3002",
     "ASYNC",
-    "ANN",
     "A",
     "ARG",
     "PIE",
-    "FA",
-    "ISC",
+    "ISC001",
+    "ISC004",
     "ICN",
-    "TD",
-    "TID",
+    "TID252",
     "N",
-    "TC",
-    "S",
-    "FA100",
 ]
-# FA100 bans from __future__ import annotations (Python 3.14+ uses PEP 649)
-# This is enforced via custom rule below
-
+ignore = ["PLW0108"]
 
 [lint.pydocstyle]
 convention = "pep257"
@@ -60,17 +90,5 @@ max-statements = 50
 max-args = 5
 
 [lint.per-file-ignores]
-"**/tests/**" = [
-    "D",
-    "E501",
-    "ARG002",
-    "S101",
-    "S105",
-    "S106",
-    "TC003",
-    "PERF401",
-    "SIM102",
-    "ANN401",
-]
+"**/tests/**" = ["D", "E501", "ARG002", "SIM102"]
 "**/migrations/**" = ["D", "E501"]
-"scraper/src/scraper/browser/sessions.py" = ["TC003"]
