@@ -1,0 +1,63 @@
+{
+  "skill_name": "sqlmodel",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Build a FastAPI app with SQLModel for a simple todo list. Requirements: Users (id, email, name) and Todos (id, title, completed, user_id). Set up relationships so a User has many Todos. Include create/read endpoints for both. Use session dependency injection. Use the SQLModel multiple-models pattern (Create/Read/Table).",
+      "expected_output": "Complete FastAPI app with SQLModel models, relationships, FastAPI routes, and session DI",
+      "files": [],
+      "expectations": [
+        "Uses SQLModel base class for all models",
+        "Uses table=True on the table model",
+        "Uses Relationship() for the User->Todos relationship",
+        "Uses the multiple-models inheritance pattern (Create schema, Read schema, Table model sharing a base)",
+        "Uses get_session() FastAPI dependency generator with Session(engine)",
+        "Uses select() from sqlmodel (not sqlalchemy's select)",
+        "Uses session.exec() (not session.execute())",
+        "Uses model_validate() when converting Create schema to Table model",
+        "Uses session.add() + session.commit() + session.refresh() for create",
+        "Uses ForeignKey pattern via Field(foreign_key=...)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I have a SQLAlchemy+Pydantic setup with separate models. Help me refactor it to SQLModel to reduce duplication. I have a User table with id, email, name and a Pydantic UserCreate + UserRead. Show the refactored code.",
+      "expected_output": "Refactored code showing SQLModel unification of Pydantic and SQLAlchemy models",
+      "files": [],
+      "expectations": [
+        "Single SQLModel class hierarchy replaces separate Pydantic + SQLAlchemy classes",
+        "Uses inheritance: UserBase -> UserCreate, UserRead, User(table=True)",
+        "No duplicate field declarations between create/read/table models",
+        "Uses Field(default=None, primary_key=True) for auto-increment id",
+        "Uses sqlmodel_select or select() from sqlmodel"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "How do I set up a many-to-many relationship in SQLModel between BlogPosts and Tags? Each post can have multiple tags, each tag can be on multiple posts. Show the complete model definitions including the link table.",
+      "expected_output": "Complete many-to-many SQLModel relationship setup with link model",
+      "files": [],
+      "expectations": [
+        "Defines a link/junction table model with table=True",
+        "Link table has two foreign keys as composite primary key",
+        "Uses Relationship() with link_model parameter on both sides",
+        "Uses back_populates on both relationships",
+        "Uses string forward references or TYPE_CHECKING for circular imports"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "I'm building a SQLModel app and my async session isn't working. Show me the correct way to set up AsyncSession with SQLModel, create async engine, and run a simple select query. Also explain the difference between Session and AsyncSession in SQLModel.",
+      "expected_output": "Correct async SQLModel session setup with engine, AsyncSession, and query pattern",
+      "files": [],
+      "expectations": [
+        "Imports AsyncSession from sqlmodel.ext.asyncio.session",
+        "Uses create_async_engine with an async driver (e.g., aiosqlite, asyncpg)",
+        "Uses async with AsyncSession(engine) as session",
+        "Uses await session.exec(statement) (not session.execute)",
+        "Explains that AsyncSession delegates to sync Session via greenlet_spawn",
+        "Does not incorrectly suggest mixing sync and async engines"
+      ]
+    }
+  ]
+}

@@ -26,31 +26,6 @@ select = [
     "RUF008",
     "RUF009",
     "B035",
-    "RUF013",
-    "RUF015",
-    "RUF017",
-    "RUF024",
-    "RUF027",
-    "RUF029",
-    "RUF032",
-    "RUF034",
-    "RUF040",
-    "RUF043",
-    "RUF049",
-    "RUF052",
-    "RUF055",
-    "RUF056",
-    "RUF058",
-    "RUF061",
-    "RUF066",
-    "RUF069",
-    "RUF073",
-    "RUF100",
-    "RUF101",
-    "RUF102",
-    "RUF103",
-    "RUF104",
-    "RUF200",
     "PLE",
     "PLW",
     "NPY",
@@ -62,7 +37,6 @@ select = [
     "PLC0206",
     "PLC0208",
     "PLC0414",
-    "PLC0415",
     "PLC1802",
     "PLC2801",
     "PLC3002",
@@ -76,7 +50,7 @@ select = [
     "TID252",
     "N",
 ]
-ignore = ["PLW0108", "N803", "N806", "ARG001", "ARG002", "RUF069"]
+ignore = ["PLW0108", "N803", "N806", "ARG001", "ARG002", "RUF069", "F401"]
 
 [lint.pydocstyle]
 convention = "pep257"

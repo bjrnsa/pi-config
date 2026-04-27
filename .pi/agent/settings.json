@@ -22,6 +22,9 @@
     "git:github.com/jonjonrankin/pi-caveman",
     "npm:@danchamorro/pi-prompt-enhancer",
     "npm:pi-verbosity-control",
-    "npm:pi-amplike"
-  ]
+    "npm:pi-amplike",
+    "npm:@aliou/pi-guardrails",
+    "npm:@aliou/pi-toolchain"
+  ],
+  "doubleEscapeAction": "tree"
 }
