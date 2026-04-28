@@ -1,0 +1,48 @@
+{
+  "skill_name": "arviz-expert",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I just ran a PyMC model and got a trace object. I want to convert it to ArviZ format, compute ESS and R-hat, generate a forest plot with ESS columns, and save everything to NetCDF. Can you show me the clean, modern ArviZ 1.x way to do this?",
+      "expected_output": "Complete Python script showing conversion, diagnostics, plotting, and NetCDF save using modern ArviZ 1.x patterns (DataTree, not InferenceData).",
+      "files": [],
+      "expectations": [
+        "The code uses az.from_pymc() or az.from_pymc(trace) for conversion",
+        "The code uses az.ess() and az.rhat() for diagnostics",
+        "The code uses az.plot_forest() for plotting",
+        "The code uses DataTree methods (.to_netcdf) for saving, NOT InferenceData.to_netcdf",
+        "The code does NOT reference arviz.InferenceData",
+        "The output mentions xarray.DataTree as the canonical container"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I'm migrating from ArviZ 0.x to 1.x. My old code uses InferenceData, idata.extend(), idata.map(), and idata.to_netcdf(). It also sets az.rcParams['stats.hdi_prob'] = 0.94. What's the equivalent modern code? And what's the default ci_prob now?",
+      "expected_output": "Clear migration guide showing the 1.x equivalents for each 0.x pattern, including the new default ci_prob/ci_kind values and DataTree method changes.",
+      "files": [],
+      "expectations": [
+        "The response states that InferenceData is replaced by xarray.DataTree",
+        "The response mentions that idata.extend() maps to DataTree.update() with reversed argument order",
+        "The response mentions that idata.map() maps to DataTree.map_over_datasets()",
+        "The response states that stats.hdi_prob is deprecated and replaced by stats.ci_prob",
+        "The response states the default ci_prob is 0.89 (not 0.94)",
+        "The response states the default ci_kind is 'eti' (not 'hdi')",
+        "The response mentions that old NetCDF files are still compatible"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I have posterior samples from a custom sampler (not PyMC or Stan) stored as a dictionary of NumPy arrays with keys 'mu' and 'sigma'. I want to use ArviZ to compute LOO, compare two models, and make a pair plot. What's the most efficient and correct way to structure the data and run this analysis?",
+      "expected_output": "Complete Python script showing from_dict conversion, proper DataTree group structure (posterior, log_likelihood), az.loo(), az.compare(), and az.plot_pair().",
+      "files": [],
+      "expectations": [
+        "The code uses az.from_dict() to ingest NumPy arrays",
+        "The code explicitly includes log_likelihood in the DataTree (required for LOO)",
+        "The code uses az.loo() for model comparison",
+        "The code uses az.compare() for multi-model comparison",
+        "The code uses az.plot_pair() for visualization",
+        "The code follows modern ArviZ 1.x patterns without referencing InferenceData"
+      ]
+    }
+  ]
+}

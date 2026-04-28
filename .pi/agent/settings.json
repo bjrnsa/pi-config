@@ -1,12 +1,12 @@
 {
-  "lastChangelogVersion": "0.70.2",
+  "lastChangelogVersion": "0.70.6",
   "transport": "websocket",
   "hideThinkingBlock": true,
   "quietStartup": true,
   "steeringMode": "all",
   "followUpMode": "all",
   "showHardwareCursor": true,
-  "defaultThinkingLevel": "high",
+  "defaultThinkingLevel": "medium",
   "autocompleteMaxVisible": 20,
   "defaultProvider": "fireworks",
   "defaultModel": "accounts/fireworks/routers/kimi-k2p6",
@@ -15,7 +15,8 @@
     "openai-codex/gpt-5.5",
     "fireworks/accounts/fireworks/routers/kimi-k2p5-turbo",
     "deepseek/deepseek-v4-pro",
-    "fireworks/accounts/fireworks/routers/kimi-k2p6"
+    "fireworks/accounts/fireworks/routers/kimi-k2p6",
+    "github-copilot/gpt-5.5"
   ],
   "packages": [
     "npm:@robhowley/py-pit-skills",
@@ -24,7 +25,9 @@
     "npm:pi-verbosity-control",
     "npm:pi-amplike",
     "npm:@aliou/pi-guardrails",
-    "npm:@aliou/pi-toolchain"
+    "npm:@aliou/pi-toolchain",
+    "https://github.com/davebcn87/pi-autoresearch"
   ],
-  "doubleEscapeAction": "tree"
+  "doubleEscapeAction": "tree",
+  "editorPaddingX": 0
 }

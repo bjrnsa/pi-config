@@ -1,0 +1,39 @@
+{
+  "skill_name": "asyncer-expert",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I have a FastAPI endpoint that needs to call a blocking database query function. How should I do this without freezing the event loop?",
+      "expected_output": "Should recommend asyncify() with explanation of worker threads and why not to call blocking code directly",
+      "files": [],
+      "expectations": [
+        "Mentions asyncify() as the primary solution",
+        "Explains that blocking code freezes the event loop",
+        "Mentions that asyncify runs the function in a worker thread"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I need to run 5 API calls concurrently and collect all their return values. I'm using asyncer. Show me the pattern.",
+      "expected_output": "Should show create_task_group() + soonify() pattern with SoonValue access after the async with block",
+      "files": [],
+      "expectations": [
+        "Shows create_task_group() usage",
+        "Shows soonify() on multiple async functions",
+        "Shows accessing .value after the async with block",
+        "Warns about PendingValueException if accessed inside the block"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I have a legacy sync Python script and I need to call an async function from inside it. What's the right approach?",
+      "expected_output": "Should recommend runnify() for the entrypoint, or syncify() if inside a worker thread, with clear distinction",
+      "files": [],
+      "expectations": [
+        "Mentions runnify() as option for top-level sync entrypoint",
+        "Mentions syncify() as option for calling async from sync inside a worker thread",
+        "Explains the difference between the two"
+      ]
+    }
+  ]
+}

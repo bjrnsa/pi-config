@@ -10,47 +10,8 @@ docstring-code-line-length = "dynamic"
 
 [lint]
 preview = true
-select = [
-    "D",
-    "E",
-    "F",
-    "UP",
-    "B",
-    "SIM",
-    "I",
-    "RET",
-    "PERF101",
-    "PERF102",
-    "PERF402",
-    "RUF006",
-    "RUF008",
-    "RUF009",
-    "B035",
-    "PLE",
-    "PLW",
-    "NPY",
-    "PD",
-    "PTH",
-    "C4",
-    "PLC0131",
-    "PLC0205",
-    "PLC0206",
-    "PLC0208",
-    "PLC0414",
-    "PLC1802",
-    "PLC2801",
-    "PLC3002",
-    "ASYNC",
-    "A",
-    "ARG",
-    "PIE",
-    "ISC001",
-    "ISC004",
-    "ICN",
-    "TID252",
-    "N",
-]
-ignore = ["PLW0108", "N803", "N806", "ARG001", "ARG002", "RUF069", "F401"]
+select = ["E", "W", "F", "I", "B", "C4", "UP", "ARG001", "T201"]
+ignore = ["B008", "B904"]
 
 [lint.pydocstyle]
 convention = "pep257"
