@@ -1,10 +1,10 @@
 ---
 name: dspy-gepa-optimizer
 description: Optimize DSPy programs with dspy.GEPA — the reflective/evolutionary optimizer that is the 2026 gold standard for DSPy (beats MIPROv2 on complex tasks with far fewer rollouts when the metric returns rich feedback). Use when the user says optimize, compile, GEPA, reflective optimization, or "make this program better" and a DSPy program + metric + trainset exist.
+when_to_use: User asks to optimize/compile/tune a DSPy program, mentions GEPA or reflective optimization, or has a working program with a non-trivial metric and wants to improve it.
 ---
 
 # DSPy GEPA Optimizer (3.2.x)
-when_to_use: User asks to optimize/compile/tune a DSPy program, mentions GEPA or reflective optimization, or has a working program with a non-trivial metric and wants to improve it.
 
 GEPA (Genetic-Pareto) is a reflective optimizer: it mutates a program's instructions and few-shots using an LM that reads your metric's **textual feedback** and proposes improvements. It maintains a Pareto frontier across validation tasks and is the default recommendation for complex DSPy workloads in 2026.
 
