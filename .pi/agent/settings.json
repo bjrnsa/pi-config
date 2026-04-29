@@ -6,10 +6,10 @@
   "steeringMode": "all",
   "followUpMode": "all",
   "showHardwareCursor": true,
-  "defaultThinkingLevel": "high",
+  "defaultThinkingLevel": "off",
   "autocompleteMaxVisible": 20,
-  "defaultProvider": "fireworks",
-  "defaultModel": "accounts/fireworks/routers/kimi-k2p6",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.5",
   "enabledModels": [
     "opencode/glm-5.1",
     "openai-codex/gpt-5.5",
