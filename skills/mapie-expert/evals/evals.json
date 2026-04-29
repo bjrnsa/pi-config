@@ -1,0 +1,71 @@
+{
+  "skill_name": "mapie-expert",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "I have a regression dataset with 1000 samples. I want 95% prediction intervals using a RandomForestRegressor. What's the simplest MAPIE approach? Give me the full code.",
+      "expected_output": "Code using SplitConformalRegressor with train_conformalize_test_split, prefit=False, confidence_level=0.95",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "My model's prediction errors grow larger when the predicted value is large (heteroscedasticity). I'm currently using SplitConformalRegressor with default settings. How should I adapt my MAPIE setup for this?",
+      "expected_output": "Recommend ConformalizedQuantileRegressor or gamma conformity score; explain why absolute score is suboptimal for heteroscedastic data",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I'm doing time series forecasting with MAPIE and using KFold for cv in TimeSeriesRegressor. My coverage is way off. What's wrong?",
+      "expected_output": "Explain that KFold violates temporal ordering; recommend BlockBootstrap; give corrected code",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I need to classify images into 10 classes and want prediction sets with marginal coverage. I'm not sure which conformity score to pick. Also, how do I evaluate the sets?",
+      "expected_output": "Recommend lac for marginal coverage or aps/raps for adaptive; show classification_coverage_score and classification_mean_width_score usage",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "I found an old tutorial using MapieRegressor with alpha=0.1 and method='naive'. Is this still the right way?",
+      "expected_output": "Explain v0 vs v1 API; recommend modern v1 classes; warn that naive has no theoretical guarantees; show migration to SplitConformalRegressor or CrossConformalRegressor",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "My binary classifier is overconfident on the minority class. I want to calibrate probabilities and then control the false positive rate below 10% using MAPIE. How do I wire TopLabelCalibrator with BinaryClassificationController? Give me the full pipeline.",
+      "expected_output": "Show TopLabelCalibrator for probability calibration, then BinaryClassificationController with false_positive_rate risk and delta=0.1",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "I have 50,000 samples and want LeaveOneOut cross-conformal intervals for tight coverage. Is this a good idea with MAPIE?",
+      "expected_output": "Warn that LOO with CrossConformalRegressor is O(n^2); recommend SplitConformalRegressor for large n or use CrossConformalRegressor with KFold(5) instead",
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "My TimeSeriesRegressor with EnbPI is too slow to update residuals online, and the prediction intervals explode after a distribution shift. Should I switch to ACI? What gamma value should I use?",
+      "expected_output": "Compare EnbPI vs ACI; explain ACI gamma tradeoffs (0.01 conservative, 0.05 default, 0.1 aggressive); show adapt_conformal_inference usage",
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "I'm using SplitConformalClassifier with lac score and getting good marginal coverage, but my boss wants conditional coverage per class. Can lac deliver this? If not, what should I use?",
+      "expected_output": "Explain lac gives marginal not conditional coverage; mention classification_ssc as diagnostic; note conditional coverage is not guaranteed by standard conformal methods",
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "After getting prediction intervals from SplitConformalRegressor, I computed coverage with a manual numpy mean instead of regression_coverage_score. Is that wrong? Also, what does regression_ssc tell me that coverage alone doesn't?",
+      "expected_output": "Recommend using MAPIE metrics (regression_coverage_score, regression_ssc); explain SSC checks coverage across interval size strata",
+      "files": []
+    },
+    {
+      "id": 10,
+      "prompt": "I want to use MAPIE for semantic segmentation on medical images. I need to control the per-image false negative rate below 5% while keeping set sizes small. Which MAPIE risk control class and workflow should I use?",
+      "expected_output": "Recommend SemanticSegmentationController with appropriate risk; explain thresholding over pixel scores; show MultiLabelClassificationController as alternative",
+      "files": []
+    }
+  ]
+}
