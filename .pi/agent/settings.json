@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.70.6",
+  "lastChangelogVersion": "0.72.1",
   "transport": "websocket",
   "hideThinkingBlock": true,
   "quietStartup": true,
@@ -7,7 +7,7 @@
   "followUpMode": "all",
   "showHardwareCursor": true,
   "defaultThinkingLevel": "off",
-  "autocompleteMaxVisible": 20,
+  "autocompleteMaxVisible": 15,
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.5",
   "enabledModels": [
@@ -19,14 +19,16 @@
     "github-copilot/gpt-5.5"
   ],
   "packages": [
-    "npm:@robhowley/py-pit-skills",
+    "-npm:@robhowley/py-pit-skills",
     "git:github.com/jonjonrankin/pi-caveman",
     "npm:@danchamorro/pi-prompt-enhancer",
     "npm:pi-verbosity-control",
-    "npm:pi-amplike",
     "npm:@aliou/pi-guardrails",
-    "npm:@aliou/pi-toolchain",
-    "https://github.com/davebcn87/pi-autoresearch"
+    "https://github.com/davebcn87/pi-autoresearch",
+    "npm:pi-rtk-optimizer",
+    "npm:pi-subagents",
+    "npm:pi-powerline-footer",
+    "npm:pi-web-access"
   ],
   "doubleEscapeAction": "tree",
   "editorPaddingX": 0
