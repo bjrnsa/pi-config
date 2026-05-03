@@ -7,7 +7,7 @@
   "followUpMode": "all",
   "showHardwareCursor": true,
   "defaultThinkingLevel": "off",
-  "autocompleteMaxVisible": 15,
+  "autocompleteMaxVisible": 20,
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.5",
   "enabledModels": [
@@ -27,9 +27,14 @@
     "https://github.com/davebcn87/pi-autoresearch",
     "npm:pi-rtk-optimizer",
     "npm:pi-subagents",
-    "npm:pi-powerline-footer",
-    "npm:pi-web-access"
+    "npm:pi-web-access",
+    "npm:pi-powerline-footer"
   ],
   "doubleEscapeAction": "tree",
-  "editorPaddingX": 0
+  "editorPaddingX": 0,
+  "powerline": {
+    "preset": "nerd",
+    "fixedEditor": true,
+    "mouseScroll": true
+  }
 }
